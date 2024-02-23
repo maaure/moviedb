@@ -12,8 +12,10 @@ class BaseService {
 		return response;
 	}
 
-	async get(id: number): Promise<any> {
-		const response = await APIConfig.get(`${this.serviceUrl}/${id}/`);
+	async get(id: number, filters: any): Promise<any> {
+		const response = await APIConfig.get(`${this.serviceUrl}/${id}`, {
+			params: filters,
+		});
 		return response;
 	}
 
